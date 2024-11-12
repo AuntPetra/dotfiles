@@ -1,0 +1,23 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+
+export PATH="${PATH}:${HOME}/.local/bin/"
+
+eval "$(fzf --bash)"
+
+alias ls='ls --hyperlink=auto --color=always'
+alias grep='kitten hyperlinked_grep --smart-case "$@" --color=always'
+alias ssh='kitten ssh'
+alias icat='kitten icat'
+alias diff='kitten diff'
+alias gitdiff='git difftool --no-symlinks --dir-diff'
+alias fed='nvim $(fzf -m)'
+
+PS1='[\u@\h \W]\$ '
+(cat ~/.cache/wal/sequences &)
+catnap
