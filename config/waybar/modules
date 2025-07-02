@@ -216,7 +216,7 @@
 },
      
 "clock": {
-    "timezone": "America/Monterrey",
+    "timezone": "America/Hermosillo",
     "interval": 1,
     "format-alt": "{:%I:%M %p}", // AM PM format
     //"format": " {:%H:%M:%S}",

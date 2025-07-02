@@ -5,8 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-
 export PATH="${PATH}:${HOME}/.local/bin/"
+export PATH=~/.npm-global/bin:${PATH}
+export MANPAGER='nvim +Man!'
 
 eval "$(fzf --bash)"
 

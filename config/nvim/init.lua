@@ -12,4 +12,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", {
+  -- This is the options table for lazy.nvim
+  checker = {
+    -- This will automatically check for plugin updates on startup
+    -- The UI will pop up if new updates are found.
+    enabled = true,
+    frequency = 86400, -- Check for updates every 24 hours
+  },
+})
