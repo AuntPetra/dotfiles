@@ -33,6 +33,9 @@ return {
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
 				}),
 				sources = cmp.config.sources({
+					per_filetype = {
+						codecompanion = { "codecompanion" },
+					},
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
 					{ name = "codeium" },
@@ -50,8 +53,8 @@ return {
 		},
 		config = function()
 			require("codeium").setup({
-				config_path = vim.fn.expand"$HOME/.config/codeium/config",
-				bin_path = vim.fn.expand"$HOME/.config/codeium/bin",
+				config_path = vim.fn.expand("$HOME/.config/codeium/config"),
+				bin_path = vim.fn.expand("$HOME/.config/codeium/bin"),
 				enable_chat = true,
 				virtual_text = {
 					enabled = true,
@@ -66,7 +69,7 @@ return {
 						lua = true,
 						luau = true,
 						sh = true,
-            javascript = true,
+						javascript = true,
 						typescript = true,
 						javascriptreact = true,
 						typescriptreact = true,

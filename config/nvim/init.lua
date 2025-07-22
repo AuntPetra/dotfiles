@@ -21,3 +21,5 @@ require("lazy").setup("plugins", {
     frequency = 86400, -- Check for updates every 24 hours
   },
 })
+
+vim.g.copilot_enabled = false
