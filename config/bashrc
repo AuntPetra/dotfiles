@@ -5,6 +5,15 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+PRIVATE_ENV_FILE="$HOME/.env"
+
+if [ -f "$PRIVATE_ENV_FILE" ]; then
+    source "$PRIVATE_ENV_FILE"
+else
+    echo "Warning: Private environment variables file not found at $PRIVATE_ENV_FILE" >&2
+    echo "Please create it with your API keys if needed, and set permissions to 600." >&2
+fi
+
 export PATH="${PATH}:${HOME}/.local/bin/"
 export PATH=~/.npm-global/bin:${PATH}
 export MANPAGER='nvim +Man!'
